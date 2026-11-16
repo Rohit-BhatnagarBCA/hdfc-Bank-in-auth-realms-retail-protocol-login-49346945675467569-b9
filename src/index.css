@@ -1,0 +1,707 @@
+
+
+/* Tailwind v4 entry - REQUIRED, the statement/dashboard pages use Tailwind utility classes. */
+@import "tailwindcss";
+
+/* =========================================
+   APP SHELL (after login): sidebar + main area
+   Sidebar is fixed 16rem wide on desktop (lg = 1024px+),
+   so main content is pushed right by the same amount.
+========================================= */
+.app-shell {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.main-area {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.main-area > footer {
+  margin-top: auto;
+}
+
+@media (min-width: 1024px) {
+  .main-area {
+    margin-left: 16rem;
+  }
+}
+
+
+
+/* =========================================
+   BANKING DEMO LOGIN PAGE
+   Split-screen responsive layout
+========================================= */
+
+.bank-login-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  background: #fff;
+}
+
+/* LEFT PROMOTIONAL SECTION */
+
+.login-promo-panel {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(145deg, #102b54, #071c3c);
+  padding: 35px 25px 55px;
+  color: white;
+}
+
+.promo-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  width: 100%;
+  max-width: 540px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.promo-heading {
+  margin-top: 70px;
+  text-align: center;
+}
+
+.promo-heading span {
+  color: #ffd65a;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.promo-heading h1 {
+  margin-top: 8px;
+  color: #ffc52d;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 900;
+  line-height: 1.08;
+}
+
+.promo-heading p {
+  margin-top: 22px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.promo-offers {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  border-radius: 30px;
+  background: white;
+  padding: 11px 22px;
+  color: #0756a5;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.promo-offers span + span {
+  border-left: 1px solid #dce3ec;
+  padding-left: 13px;
+}
+
+.promo-button {
+  min-width: 190px;
+  margin-top: 16px;
+  border-radius: 7px;
+  background: #2348d5;
+  padding: 12px 25px;
+  color: white;
+  font-size: 12px;
+  font-weight: 800;
+  transition: 0.2s;
+}
+
+.promo-button:hover {
+  background: #1536af;
+  transform: translateY(-2px);
+}
+
+/* FESTIVE GIFT ILLUSTRATION */
+
+.festival-scene {
+  position: relative;
+  width: 100%;
+  height: 390px;
+  margin-top: 35px;
+}
+
+.festival-arch {
+  position: absolute;
+  bottom: -130px;
+  left: 50%;
+  width: 90%;
+  max-width: 470px;
+  height: 480px;
+  transform: translateX(-50%);
+  border: 12px solid #ffce43;
+  border-bottom: 0;
+  border-radius: 150px 150px 0 0;
+  background: linear-gradient(180deg, #ffc43c, #f8a91f);
+  box-shadow: inset 0 0 0 12px #ffdc71;
+}
+
+.arch-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.festival-stars {
+  margin-top: 30px;
+  color: #ffe9a3;
+  text-align: center;
+  font-size: 21px;
+}
+
+.festival-gift {
+  position: absolute;
+  bottom: 75px;
+  left: 50%;
+  width: 245px;
+  transform: translateX(-50%);
+}
+
+.gift-bow {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  height: 48px;
+}
+
+.gift-bow span {
+  width: 75px;
+  height: 35px;
+  border: 9px solid #e63c3b;
+  border-radius: 70% 20% 70% 20%;
+  background: #ef4545;
+  transform: rotate(28deg);
+}
+
+.gift-bow span + span {
+  transform: scaleX(-1) rotate(28deg);
+}
+
+.gift-lid {
+  position: relative;
+  z-index: 2;
+  height: 37px;
+  border: 7px solid #f4ba27;
+  background: #0756a5;
+  box-shadow: 0 0 0 3px #17375d;
+}
+
+.gift-lights {
+  padding-top: 4px;
+  color: #ffd65a;
+  text-align: center;
+  font-size: 17px;
+}
+
+.gift-box {
+  position: relative;
+  height: 165px;
+  border: 5px solid #e9a91e;
+  background: linear-gradient(135deg, #0756a5, #052d62);
+}
+
+.gift-ribbon {
+  position: absolute;
+  left: 45%;
+  width: 24px;
+  height: 100%;
+  background: #e63c3b;
+}
+
+.gift-label {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  display: flex;
+  width: 130px;
+  height: 130px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-50%);
+  border: 6px double #ffc52d;
+  border-radius: 50%;
+  background: #f2a918;
+  color: #093a70;
+  text-align: center;
+}
+
+.gift-label span {
+  font-size: 7px;
+  font-weight: 900;
+}
+
+.gift-label strong {
+  font-size: 18px;
+  line-height: 1.1;
+}
+
+.gift-label small {
+  margin-top: 5px;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.gift-platform {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  width: 120%;
+  height: 35px;
+  transform: translateX(-50%);
+  border: 4px solid #ffca32;
+  border-radius: 50%;
+  background: #052c5a;
+}
+
+.promo-diya {
+  position: absolute;
+  bottom: 120px;
+  color: #a45b0b;
+  font-size: 38px;
+}
+
+.diya-left {
+  left: 5%;
+}
+
+.diya-right {
+  right: 5%;
+}
+
+.promo-firework {
+  position: absolute;
+  z-index: 1;
+  color: #ffce38;
+  font-size: 65px;
+  animation: festive-pulse 3s infinite;
+}
+
+.firework-one {
+  top: 35px;
+  left: 15%;
+}
+
+.firework-two {
+  top: 50px;
+  right: 15%;
+}
+
+@keyframes festive-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(0.9) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1) rotate(20deg);
+  }
+}
+
+.promo-footer {
+  position: absolute;
+  bottom: 18px;
+  color: #ffffff80;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* RIGHT LOGIN SECTION */
+
+.login-form-panel {
+  display: flex;
+  min-height: 100vh;
+
+  align-items: flex-start;
+  justify-content: center;
+  overflow-y: auto;
+  background: #fff;
+  padding: 38px 35px 75px;
+}
+
+.login-form-container {
+  width: 100%;
+  max-width: 550px;
+  padding-top: 0;
+}
+
+.login-brand {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 8px;
+  color: #0756a5;
+  font-size: 21px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+.login-brand-icon {
+  display: grid;
+  width: 35px;
+  height: 35px;
+  place-items: center;
+  background: #0756a5;
+  color: white;
+  font-size: 22px;
+}
+
+.login-brand small {
+  border-radius: 4px;
+  background: #fff1c7;
+  padding: 4px 6px;
+  color: #94600f;
+  font-size: 8px;
+}
+
+.login-welcome {
+  margin-top: 12px;
+  color: #172235;
+  font-size: 30px;
+  font-weight: 550;
+}
+
+.banking-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 25px;
+  border-bottom: 1px solid #ddd;
+}
+
+.banking-tab {
+  min-height: 47px;
+  border-bottom: 2px solid transparent;
+  color: #252525;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.banking-tab.active {
+  border-bottom-color: #2348d5;
+  color: #2348d5;
+  font-weight: 900;
+}
+
+.qr-login-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 55px;
+  border: 1.5px solid #d2dcfa;
+  border-radius: 10px;
+  background: #f5f7ff;
+  padding: 18px;
+}
+
+.qr-placeholder {
+  display: flex;
+  width: 72px;
+  height: 92px;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: white;
+  color: #0756a5;
+}
+
+.qr-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  font-size: 20px;
+}
+
+.qr-placeholder small {
+  font-size: 1px;
+  font-weight: 800;
+}
+
+.qr-information {
+  flex: 1;
+}
+
+.qr-information h3 {
+  color: #253247;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.qr-information p {
+  margin-top: 7px;
+  color: #1b1d1f;
+  font-size: 21px;
+  line-height: 1.5;
+}
+
+.new-tag {
+  margin-left: 6px;
+  border-radius: 4px;
+  background: #168a26;
+  padding: 3px 5px;
+  color: white;
+  font-size: 9px;
+}
+
+.qr-arrow {
+  color: #2348d5;
+  font-size: 29px;
+}
+
+.qr-message {
+  margin-top: 4px;
+  border-radius: 8px;
+  background: #0a811e;
+  padding: 13px;
+  color: #e4e7eb;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.or-divider {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 27px 0;
+}
+
+.or-divider span {
+  height: 1px;
+  flex: 1;
+  background: #d7d7d7;
+}
+
+.or-divider p {
+  color: #777;
+  font-size: 16px;
+}
+
+.bank-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bank-field label {
+  display: block;
+  margin-bottom: 9px;
+  color: #202a3a;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.bank-field > input,
+.bank-password-field input {
+  width: 100%;
+  height: 44px;
+  border: 1px solid #9aa9bd;
+  border-radius: 8px;
+  padding: 0 13px;
+  color: #253247;
+  font-size: 18px;
+}
+
+.bank-field input:focus {
+  border-color: #2348d5;
+  outline: none;
+  box-shadow: 0 0 0 3px #2348d51a;
+}
+
+.bank-help-link {
+  display: inline-block;
+  margin-top: 9px;
+  color: #2348d5;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.bank-password-field {
+  position: relative;
+}
+
+.bank-password-field input {
+  padding-right: 45px;
+}
+
+.bank-password-field button {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  color: #68788f;
+}
+
+.bank-submit-button {
+  width: 100%;
+  height: 44px;
+  border-radius: 8px;
+  background: #2348d5;
+  color: white;
+  font-size: 14px;
+  font-weight: 800;
+  transition: 0.2s;
+}
+
+.bank-submit-button:hover {
+  background: #1938b5;
+}
+
+.bank-register-link {
+  margin-top: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+  color: #788394;
+  font-size: 18px;
+}
+
+.bank-register-link button {
+  margin-left: 9px;
+  color: #2348d5;
+  font-weight: 800;
+}
+
+.login-security-note {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 17px;
+  color: #788394;
+  font-size: 16px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .bank-login-page {
+    grid-template-columns: 42% 58%;
+  }
+
+  .login-promo-panel {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .promo-heading {
+    margin-top: 90px;
+  }
+
+  .promo-heading h1 {
+    font-size: 34px;
+  }
+
+  .festival-gift {
+    transform: translateX(-50%) scale(0.85);
+  }
+
+  .login-form-panel {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+}
+
+@media (max-width: 650px) {
+  .bank-login-page {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .login-promo-panel {
+    min-height: 290px;
+    padding: 25px 18px;
+  }
+
+  .promo-heading {
+    margin-top: 15px;
+  }
+
+  .promo-heading span {
+    font-size: 13px;
+  }
+
+  .promo-heading h1 {
+    font-size: 30px;
+  }
+
+  .promo-heading p {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+
+  .promo-offers {
+    margin-top: 12px;
+    padding: 9px 13px;
+    font-size: 8px;
+  }
+
+  .promo-button {
+    margin-top: 10px;
+    padding: 9px 18px;
+  }
+
+  .festival-scene {
+    display: none;
+  }
+
+  .promo-firework {
+    font-size: 38px;
+  }
+
+  .promo-footer {
+    bottom: 8px;
+    font-size: 7px;
+  }
+
+  .login-form-panel {
+    min-height: auto;
+    padding: 30px 20px 40px;
+  }
+
+  .login-form-container {
+    max-width: 440px;
+  }
+
+  .login-welcome {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .qr-login-card {
+    gap: 9px;
+    padding: 11px;
+  }
+
+  .qr-placeholder {
+    width: 58px;
+    height: 65px;
+  }
+
+  .qr-information h3 {
+    font-size: 11px;
+  }
+
+  .qr-information p {
+    font-size: 10px;
+  }
+
+  .bank-register-link {
+    font-size: 11px;
+  }
+}
